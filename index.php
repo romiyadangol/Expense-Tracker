@@ -1,5 +1,5 @@
 <?php
-require "connect.php";
+require "./database/connect.php";
 
 // Fetch all expenses from the database
 $sql_exp = "SELECT * FROM exp";
@@ -18,8 +18,10 @@ $categories = mysqli_fetch_all($result_category, MYSQLI_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+<h1>Expense Tracker</h1>
     <main>
         <form action="add.php" method="post">
             <label for="">Entry type:</label>

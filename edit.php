@@ -1,5 +1,5 @@
 <?php
-require "connect.php";
+require "./database/connect.php";
 
 // Check if expense ID is set
 if(isset($_POST['id'])) {
@@ -48,10 +48,11 @@ if (isset($_POST['ename'], $_POST['amt'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Expense</title>
+    <link rel="stylesheet" href="./assets/edit.css">
 </head>
-<body>
+<body>  
+<h2>Edit Expense</h2>
     <main>
-        <h2>Edit Expense</h2>
         <form action="edit.php" method="post"> <!-- Specify the correct action -->
             <label for="ename">ID: </label>
             <input type="text" name="id" value="<?php echo $expense['id']; ?>"><br><br>
@@ -62,7 +63,7 @@ if (isset($_POST['ename'], $_POST['amt'])) {
             <button type="submit">Save Changes</button>
         </form><br><br>
 
-        <button><a href="index.php">&lt;- Back</a></button>
+        <button><a href="index.php">BACK</a></button>
     </main>
 </body>
 </html>
